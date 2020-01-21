@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+ 
+{% block title%} Home {% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-
-</head>
-
-<body>
-    <h1>This is our home page</h1>
-    <p>Welcome to our home page</p>
-
-</body>
-
-</html>
+{% block body %}
+<h1>This is our latest news home page</h1>
+<p>This is our latest news description</p>
+{% endblock %}
