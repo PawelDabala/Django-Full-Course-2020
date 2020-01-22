@@ -15,11 +15,21 @@ def Home(request):
 
 def NewsP(request):
 
-    obj = News.objects.get(id=1) 
+    obj = News.objects.get(id=1)
     context = {
         "data": obj
     }
     return render(request, 'news.html', context=context)
+
+
+def NewsDate(request, year):
+    article_list = News.objects.filter(pub_date__year=year)
+
+    context = {
+        'year': year,
+        'article_list': article_list
+    }
+    return render(request, 'newsdate.html', context)
 
 
 def Contact(request):
