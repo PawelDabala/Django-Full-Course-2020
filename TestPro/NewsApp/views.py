@@ -14,7 +14,8 @@ def Home(request):
 
 def News(request):
     context = {
-        "list": ["Python", "Java", "C++", "C#", "Ruby"]
+        "list": ["Python", "Java", "C++", "C#", "Ruby"],
+        "mynum": 40
     }
     return render(request, 'news.html', context=context)
 
