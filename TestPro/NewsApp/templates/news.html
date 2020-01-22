@@ -5,19 +5,10 @@
 {% block body %}
 <h1>This is our news page</h1>
 <p>This is our content description</p>
-{{ list }}
 
-{% for lang in list %}
+<h1>{{ data.author }}</h1>
+<h2>{{ data.title }}</h2>
+<p>{{ data.description }}</p>
 
-<ul>
-    <li> {{ lang }}</li>
-</ul>
-{% endfor %}
-
-{% if mynum == 50 %}
-<h1>Condition Is True</h1>
-{% else %}
-<h1>Condition is False</h1>
-{% endif %}
 
 {% endblock %}
