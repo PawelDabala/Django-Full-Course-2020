@@ -41,25 +41,22 @@ def Contact(request):
 
 
 def Register(request):
+    context = {
+        "form": RegistrationForm
+    }
 
-
-context = {
-    "form": RegistrationForm
-}
-return render(request, 'singup.html', context)
+    return render(request, 'singup.html', context)
 
 
 def addUser(request):
+    form = RegistrationForm(request.POST)
 
+    if form.is_valid():
+        myregister = RegistrationData(username=form.cleaned_data['username'],
+                                      password=form.cleaned_data['password'],
+                                      email=form.cleaned_data['email'],
+                                      phone=form.cleaned_data['phone']
+                                      )
+        myregister.save()
 
-form = RegistrationForm(request.POST)
-
-if form.is_valid():
-    myregister = RegistrationData(username=form.cleaned_data['username'],
-                                  password=form.cleaned_data['password'],
-                                  email=form.cleaned_data['email'],
-                                  phone=form.cleaned_data['phone']
-                                  )
-    myregister.save()
-
-return redirect('home')
+    return redirect('home')
