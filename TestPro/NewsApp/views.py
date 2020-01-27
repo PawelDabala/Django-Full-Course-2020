@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from .models import News, SportNews, RegistrationData
 from .forms import RegistrationForm
-
+from django.contrib import messages
 # 138:51
 
 # Create your views here.
@@ -58,5 +58,7 @@ def addUser(request):
                                       phone=form.cleaned_data['phone']
                                       )
         myregister.save()
+        messages.add_message(request, messages.SUCCESS,
+                             'You have singup successfuly ')
 
-    return redirect('home')
+    return redirect('register')
