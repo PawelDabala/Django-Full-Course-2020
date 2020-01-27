@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from .models import News, SportNews, RegistrationData
-from .forms import RegistrationForm
+from .forms import RegistrationForm, RegistrationDataModel
 from django.contrib import messages
 # 138:51
 
@@ -62,3 +62,20 @@ def addUser(request):
                              'You have singup successfuly ')
 
     return redirect('register')
+
+
+def modelform(request):
+
+    context = {
+        'modalform': RegistrationDataModel
+    }
+    return render(request, 'modelform.html', context)
+
+
+def addModalForm(request):
+    mymodalform = RegistrationDataModel(request.POST)
+
+    if mymodalform.is_valid():
+        mymodalform.save()
+
+    return redirect('form')
