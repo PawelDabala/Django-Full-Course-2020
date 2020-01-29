@@ -11,7 +11,18 @@
     <form action="{% url 'modalform' %}" method="post">
 
         {% csrf_token %}
-        {{ modalform.as_p}}
+        <!-- {{ modalform.as_p}}  -->
+        <div class="form-group">
+            <label>Username</label>
+            {{ modalform.username}}
+            <label>password</label>
+            {{ modalform.password}}
+            <label>email</label>
+            {{ modalform.email}}
+            <label>Phone</label>
+            {{ modalform.phone}}
+
+        </div>
 
         <input type="submit" class="btn btn-success" value="Register">
     </form>
