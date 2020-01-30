@@ -49,3 +49,4 @@ class RegistrationDataModel(forms.ModelForm):
                 'placeholder': 'Phone number'
             })  
         }
+
