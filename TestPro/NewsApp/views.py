@@ -1,9 +1,8 @@
 
 from django.shortcuts import render, HttpResponse, redirect
-from .models import News, SportNews, RegistrationData
+from .models import News, SportNews, RegistrationData, Article3
 from .forms import RegistrationForm, RegistrationDataModel
 from django.contrib import messages
-# 138:51
 
 
 # Create your views here.
@@ -82,3 +81,6 @@ def addModalForm(request):
         mymodalform.save()
 
     return redirect('form')
+
+
+    

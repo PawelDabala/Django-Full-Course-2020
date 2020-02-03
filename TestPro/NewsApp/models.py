@@ -31,3 +31,16 @@ class RegistrationData(models.Model):
     def __str__(self):
         return self.username
 
+
+class Article3(models.Model):
+    """Model definition for Aritcle3."""
+
+    # TODO: Define fields here
+    title = models.CharField(max_length=50)
+    body = models.TextField()
+    date = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        """Unicode representation of Aritcle3."""
+        return self.title
+
