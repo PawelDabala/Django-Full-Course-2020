@@ -63,3 +63,29 @@ class Article2(models.Model):
     def __str__(self):
         """Unicode representation of Article2."""
         return self.headline
+
+
+class Place(models.Model):
+    """Model definition for Place
+."""
+    name = models.CharField(max_length=30)
+    address = models.CharField(max_length=30)
+
+    def __str__(self):
+        """Unicode representation of Place
+    ."""
+        return self.name
+
+
+class Restaurant(models.Model):
+    """Model definition for Restaurant."""
+
+    # TODO: Define fields here
+    place = models.OneToOneField(
+        Place, on_delete=models.CASCADE, primary_key=True)
+    serves_hot_dogs = models.BooleanField(default=False)
+    serves = models.BooleanField(default=False)
+
+    def __str__(self):
+        """Unicode representation of Restaurant."""
+        return self.place.name
