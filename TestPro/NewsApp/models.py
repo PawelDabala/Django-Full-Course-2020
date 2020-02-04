@@ -45,4 +45,30 @@ class Article3(models.Model):
         return self.title
 
     def ShortenText(self):
-        return self.body[:5] 
+        return self.body[:5]
+
+
+class ContactInfo(models.Model):
+    """Model definition for ContactInfo."""
+
+    # TODO: Define fields here
+    name = models.CharField(max_length=40)
+    email = models.EmailField(max_length=40)
+    address = models.CharField(max_length=30)
+
+    class Meta:
+        abstract = True
+
+
+class Customer(ContactInfo):
+    """Model definition for Customer."""
+
+    # TODO: Define fields here
+    phone = models.CharField(max_length=30)
+
+
+class Staf(ContactInfo):
+    """Model definition for Staf."""
+
+    # TODO: Define fields here
+    position = models.CharField(max_length=30)
