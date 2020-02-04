@@ -72,3 +72,24 @@ class Staf(ContactInfo):
 
     # TODO: Define fields here
     position = models.CharField(max_length=30)
+
+
+class Place(models.Model):
+    """Model definition for Place."""
+
+    # TODO: Define fields here
+    name = models.CharField(max_length=50)
+    address = models.CharField(max_length=50)
+
+    def __str__(self):
+        """Unicode representation of Place."""
+        return self.name
+
+
+class Restaurant(Place):
+    """Model definition for Restaurant."""
+
+    # TODO: Define fields here
+    servers_pizza = models.BooleanField(default=False)
+    serves_tuna = models.BooleanField(default=False)
+
