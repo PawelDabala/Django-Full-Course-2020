@@ -5,4 +5,13 @@
 {% block body %}
 <h1>This is our news page</h1>
 
+
+{% for article in articles%}
+
+<h3>{{article.title}}</h3>
+<h4>{{article.ShortenText}}</h4>
+<h5>{{article.date}}</h5>
+{% endfor %}
+
+
 {% endblock %}

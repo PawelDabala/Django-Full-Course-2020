@@ -44,3 +44,5 @@ class Article3(models.Model):
         """Unicode representation of Aritcle3."""
         return self.title
 
+    def ShortenText(self):
+        return self.body[:5] 

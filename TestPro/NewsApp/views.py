@@ -9,11 +9,21 @@ from django.contrib import messages
 
 
 def Home(request):
+
+    article = Article3.objects.all()
     context = {
-        "name": "Pawel Dabala",
-        "number": 213432
+       "articles": article
     }
     return render(request, 'index.html', context)
+
+
+def Home2(request):
+
+    article = Article3.objects.all()
+    context = {
+       "articles":article
+    }
+    return render(request, 'home.html', context)
 
 
 def NewsP(request):
