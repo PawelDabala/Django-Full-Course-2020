@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -103,3 +103,19 @@ class Article3(models.Model):
     def __str__(self):
         """Unicode representation of Aritcle3."""
         return self.title
+
+
+
+class MyUser(User):
+    """Model definition for MyUser."""
+
+    # TODO: Define fields here
+
+    class Meta:
+        """Meta definition for MyUser."""
+        ordering = ('username',)
+        proxy = True
+        
+            
+
+   
